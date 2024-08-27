@@ -12,8 +12,8 @@
 //     console.log(add(+a, +b));    
 // })
 
-const arr:string[] = ["apple", "mango"];
-arr.push("banana");
+// const arr:string[] = ["apple", "mango"];
+// arr.push("banana");
 
-let arr1 : number[];
-arr1 = [1, 2, 3];
+// let arr1 : number[];
+// arr1 = [1, 2, 3];
