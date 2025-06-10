@@ -2,58 +2,74 @@ type Person = {
     name: string;
     rno: number;
     hobbies: string[];
-    email?: string;
+    email?: string;    // (?) mean optional field
 }
 
-let person : Person = {
+let person: Person = {
     name: "Ali",
     rno: 132,
-    hobbies: ["reading", "playing"],
-}
+    hobbies: ["reading", "playing"],   
+};
 person.email = "test@gmail.com";
 
-const persons: Person[] = [];
+const persons: Person[] = [];  // const persons (name)  ;  :Person[]= (type)  ;  [] (assign empty array)
 persons.push({
-    name: "hamza",
-    rno: 678,
-    hobbies: ["football"],
-    email: "hamza@gmail.com",
+    name: "Hamza",
+    rno: 234,
+    hobbies: ["CCricket"],
+    email: "test@gmail.com",
 })
 
-const add = function (val1 : number, val2 : number) : number {
-    return val1 + val2;
-}
 
-let func : (x : number, y : number) => number;
-func = add;
+
+// const addtiton = function (val1: number, val2: number, cb: (x :string) => string) : number {  // (:number)  mean tell return type
+//     cb("hello");
+//     return val1 + val2
+// }
+
+// let func: (x: number, y:number, cb: (x :string) => string) => number;
+// func = addtiton;
+
+
+type Calc = "add" | "sub"  // type literls ( | )
+const addtiton = function (val1: number, val2: number, calc: Calc) {
+    if(calc === "add"){
+        return val1 + val2
+    }else if(calc === "sub"){
+        return val1 - val2
+    }
+}
+console.log(addtiton(2, 3, "add"));
+
+
 //  |(union operator)
 
-type Calc = "add" | "sub" // type literal 
-const add1 = function (val1 : number, val2 : number, calc : Calc) {
-    if(calc === "add"){
-        return val1 + val2;
-    } else if (calc === "sub"){
-        return val1 - val2;
-    }
-};
-
-console.log(add1(10, 5, "add"));
-
-// tuple
-let gender: [string, number] = ["Ali", 12];
+let gender: [string, string] = ["Male", "Female"];
 gender[0] = "asad";
-gender.push(8);
-let error:[number, string] = [404, "user not found"];
+gender.push("hamza"); // this is a issue from typescript
+
+let error: [number, string] = [404, "Not Found"];
 
 
+// class Student{
+//     name: string;
+//     rno: number;
+//     constructor(name: string, rno: number){
+//         this.name = name;
+//         this.rno = rno;
+//     }
+// }
 class Student{
-    name: string;
-    rno: number;
-    constructor(name: string, rno: number){
+    private skills: string[] = [];
+    constructor(public name: string, public readonly rno: number){
         this.name = name;
         this.rno = rno;
     }
-}
 
+    addSkill(skill: string){
+        this.skills.push(skill);
+    }
+}
 let std1 = new Student("Amir", 78);
+std1.addSkill("reading");
 console.log(std1);

@@ -4,19 +4,14 @@ var person = {
     hobbies: ["reading", "playing"],
 };
 person.email = "test@gmail.com";
-var persons = [];
+var persons = []; // const persons (name)  ;  :Person[]= (type)  ;  [] (assign empty array)
 persons.push({
-    name: "hamza",
-    rno: 678,
-    hobbies: ["football"],
-    email: "hamza@gmail.com",
+    name: "Hamza",
+    rno: 234,
+    hobbies: ["CCricket"],
+    email: "test@gmail.com",
 });
-var add = function (val1, val2) {
-    return val1 + val2;
-};
-var func;
-func = add;
-var add1 = function (val1, val2, calc) {
+var addtiton = function (val1, val2, calc) {
     if (calc === "add") {
         return val1 + val2;
     }
@@ -24,18 +19,19 @@ var add1 = function (val1, val2, calc) {
         return val1 - val2;
     }
 };
-console.log(add1(10, 5, "add"));
-// tuple
-var gender = ["Ali", 12];
+console.log(addtiton(2, 3, "add"));
+//  |(union operator)
+var gender = ["Male", "Female"];
 gender[0] = "asad";
-gender.push(8);
-var error = [404, "user not found"];
-var Student = /** @class */ (function () {
-    function Student(name, rno) {
-        this.name = name;
-        this.rno = rno;
-    }
-    return Student;
-}());
-var std1 = new Student("Amir", 78);
-console.log(std1);
+gender.push("hamza"); // this is a issue from typescript
+var error = [404, "Not Found"];
+// class Student{
+//     name: string;
+//     rno: number;
+//     constructor(name: string, rno: number){
+//         this.name = name;
+//         this.rno = rno;
+//     }
+// }
+// let std1 = new Student("Amir", 78);
+// console.log(std1);
