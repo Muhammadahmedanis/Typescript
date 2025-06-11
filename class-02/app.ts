@@ -59,6 +59,7 @@ let error: [number, string] = [404, "Not Found"];
 //         this.rno = rno;
 //     }
 // }
+
 class Student{
     private skills: string[] = [];
     constructor(public name: string, public readonly rno: number){
@@ -73,3 +74,4 @@ class Student{
 let std1 = new Student("Amir", 78);
 std1.addSkill("reading");
 console.log(std1);
+

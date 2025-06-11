@@ -1,9 +1,10 @@
 ! this verify if this stattement exist
 typescript enforce in development time to check all things to minimize error 
 (?) mean optional field
-type literls ( | )
-Tuples is a fixed length array
-
+type literls: ( | )
+Tuples: is a fixed length array
+type casting: asHtmlInputElemet 
+Generics: why we use because typescript donot what return from promise so we use generics
 rechange rootDir and outputDir class 3
 tsc --init
 tsc -w
